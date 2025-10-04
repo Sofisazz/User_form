@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Заявка на вакансию</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        <i class="bi bi-file-earmark-text"></i>
+        <h2 class="mb-0">Отправить заявку на вакансию</h2>
+      </div>
+      <div class="card-body p-4">
+        <form action="process.php" method="POST">
+          <div class="mb-3">
+            <label for="position" class="form-label fw-bold">
+              <i class="bi bi-briefcase me-2 text-primary"></i>Должность
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
+              <input type="text" class="form-control" id="position" name="position" required
+                minlength="2" maxlength="100"
+                placeholder="Frontend-разработчик"
+                title="Должность должна содержать от 2 до 100 символов">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="applicant_name" class="form-label fw-bold">
+              <i class="bi bi-person me-2 text-primary"></i>ФИО соискателя
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+              <input type="text" class="form-control" id="applicant_name" name="applicant_name" required
+                minlength="5" maxlength="150"
+                pattern="[А-Яа-яЁё\s\-]{5,150}"
+                placeholder="Иванов Иван Иванович"
+                title="Введите полное ФИО кириллицей (минимум 5 символов)">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="resume_link" class="form-label fw-bold">
+              <i class="bi bi-link-45deg me-2 text-primary"></i>Ссылка на резюме
+            </label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bi bi-file-earmark"></i></span>
+              <input type="url" class="form-control" id="resume_link" name="resume_link" required
+                minlength="10" maxlength="500"
+                placeholder="https://hh.ru/resume/abc123"
+                title="Укажите корректную ссылку на резюме (например, hh.ru)">
+            </div>
+            <div class="form-text">Пример: <code>https://hh.ru/resume/abc123</code></div>
+          </div>
+
+          <div class="mb-4">
+            <label for="cover_letter" class="form-label fw-bold">
+              <i class="bi bi-envelope me-2 text-primary"></i>Сопроводительное письмо
+            </label>
+            <textarea class="form-control" id="cover_letter" name="cover_letter" required
+              minlength="25" maxlength="2000"
+              placeholder="Расскажите, почему вы подходите на эту позицию... Минимум 25 символов."
+              title="Сопроводительное письмо должно содержать от 25 до 2000 символов"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">
+            <i class="bi bi-send me-2"></i>Отправить заявку
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
