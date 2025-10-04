@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=form.html" />
+  <title>Заявка на вакансию</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f4ff;
+      color: #3a0ca3;
+    }
+    .loader {
+      text-align: center;
+    }
+    .loader p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader">
+    <svg width="48" height="48" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="#4361ee" stroke-width="2" fill="none" />
+      <path d="M12 2a10 10 0 0 1 10 10" stroke="#3a0ca3" stroke-width="2" stroke-dasharray="15,47" stroke-linecap="round">
+        <animateTransform attributeName="transform" type="rotate" dur="1s" from="0 12 12" to="360 12 12" repeatCount="indefinite" />
+      </path>
+    </svg>
+    <p>Перенаправление на форму...</p>
+  </div>
+</body>
+</html>
