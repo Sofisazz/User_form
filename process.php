@@ -8,7 +8,6 @@ $applicant_name = trim($_POST['applicant_name'] ?? '');
 $resume_link = trim($_POST['resume_link'] ?? '');
 $cover_letter = trim($_POST['cover_letter'] ?? '');
 
-// Валидация
 if (empty($position)) $errors[] = "Укажите должность.";
 if (empty($applicant_name)) $errors[] = "Введите ФИО.";
 if (empty($resume_link)) {
@@ -18,7 +17,6 @@ if (empty($resume_link)) {
 }
 if (empty($cover_letter)) $errors[] = "Напишите сопроводительное письмо.";
 
-// Общие стили (встроенные для простоты)
 $commonStyles = '
   <style>
     body {
@@ -98,7 +96,6 @@ if (!empty($errors)) {
     exit;
 }
 
-// Подготовленный запрос
 $stmt = $mysqli->prepare("INSERT INTO job_applications (position, applicant_name, resume_link, cover_letter) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("ssss", $position, $applicant_name, $resume_link, $cover_letter);
 
